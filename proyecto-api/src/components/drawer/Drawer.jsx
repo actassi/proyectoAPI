@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { Avatar, Button, Container, ListItemIcon, ListItemText } from '@mui/material';
+import { Button, Container, ListItemIcon, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ListItemButton from '@mui/material/ListItemButton';
 

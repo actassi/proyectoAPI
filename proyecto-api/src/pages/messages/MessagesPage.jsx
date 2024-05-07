@@ -4,9 +4,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import DrawerLeft from '../../components/drawer/Drawer';
-import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+import PexelsAPIComponent from '../../components/apis/pexeles/Pexeles';
 
 export default function ProfilePage() {
   return (
@@ -30,6 +30,7 @@ export default function ProfilePage() {
                 padding="0.1rem "
             >
             <p>ESTO ES LA PAGINA DE MESSAGES</p>
+            <PexelsAPIComponent />
             </Box>
             
           </Grid>

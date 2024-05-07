@@ -9,6 +9,8 @@ import { MdOutlineSettings } from 'react-icons/md';
 import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+import GiphyViewer from '../../components/apis/giphy/Giphy';
+
 
 export default function HomePage() {
   return (
@@ -35,6 +37,7 @@ export default function HomePage() {
                 <MdOutlineSettings size={20} color="black" />
             </Box>
             <CardPersonal sx={{ width: '100%' }}/>
+            <GiphyViewer />
           </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: '-22px'}}>
             {/* Contenido aquí */}
