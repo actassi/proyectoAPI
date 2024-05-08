@@ -14,6 +14,7 @@
 .loginContenedorPrincipal {
   display: grid;
   padding: 0 10%;
+  justify-items: center;
 
  }
 .loginContenedor2 {
@@ -110,8 +111,9 @@ font-size: 140%;
   border-radius: 50px;
   height: 38px;
   max-width: 300px;
+  min-width: 240px;
   gap: 10px;
-  margin: 0 20% 0 0;
+  
 }
 .crearCuenta {
   font-family: "ChirpBold";
