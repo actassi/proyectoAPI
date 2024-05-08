@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "ChirpHeavy";
+  src: url("../../assets/ChirpHeavy.ttf");
+}
+@font-face {
+  font-family: "ChirpRegular";
+  src: url("../../assets/ChirpRegular.ttf");
+}
+@font-face {
+  font-family: "ChirpBold";
+  src: url("../../assets/ChirpBold.ttf");
+}
+
+.loginContenedorPrincipal {
+  display: grid;
+  align-content: space-around;
+}
+.loginContenedor2 {
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+.x {
+  width: 100%;
+
+  max-height: 390px;
+}
+.contenedorTitulos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.titulo {
+  line-height: 1em;
+  font-family: "ChirpHeavy";
+  font-size: 6.4rem;
+  font-weight: 600;
+  margin: 0 24% 0 8%;
+  align-content: center;
+  text-align: left;
+  transform: scale(1.25, 1);
+  padding-right: 9%;
+}
+.subtitulo {
+  font-family: "ChirpHeavy";
+  width: 300px;
+  text-align: left;
+  margin: 6% 0;
+  transform: scale(1.12, 1);
+  padding: 0px 0 0 2%;
+  font-size: 3.1rem;
+}
+.botonAutenticacion {
+  border: 1px solid;
+  border-color: rgb(207, 217, 222);
+font-size: 1.4rem;
+  font-family: "ChirpRegular";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50px;
+  height: 38px;
+  width: 300px;
+  gap: 10px;
+  margin: 0 20% 0 0;
+}
+.crearCuenta {
+  font-family: "ChirpBold";
+
+  background-color: rgb(29, 155, 240);
+  color: rgb(255, 255, 255);
+}
+.h4Login {
+  font-family: "ChirpBold";
+  color: rgb(15, 20, 25);
+  font-size: 1.7rem;
+}
+.yaTienesCuenta {
+  display: flex;
+  height: 176px;
+  justify-items: start;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.yaTienesCuenta__boton {
+  font-family: "ChirpBold";
+  border: 1px solid;
+  font-size: 1.5rem;
+  border-color: rgb(207, 217, 222);
+  color: rgb(29, 155, 240);
+}
+.or {
+  font-family: "ChirpRegular";
+
+  text-align: center;
+  width: 300px;
+  margin: 0 20% 0 0;
+}
+.terminosycondiciones {
+  max-width: 300px;
+  text-overflow: unset;
+  font-family: "ChirpRegular";
+  font-size: 11px;
+  margin: 0 20% 0 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.terminosycondiciones > a {
+  text-decoration: none;
+  color: rgb(29, 155, 240);
+}
+.navLogin {
+  display: flex;
+  gap: 10px;
+  flex-flow: wrap;
+  justify-content: center;
+  line-height: 1;
+  align-items: baseline;
+  margin: 0 auto;
+  width: 90vw;
+}
+.navA {
+  width: max-content;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: rgb(83, 100, 113);
+  font-family: "ChirpRegular";
+  text-wrap: nowrap;
+}

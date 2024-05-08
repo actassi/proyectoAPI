@@ -7,8 +7,34 @@ import DrawerLeft from '../../components/drawer/Drawer';
 import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+//import { collection, addDoc } from "firebase/firestore"; 
+//import { db } from '../../firebase/Conexion'
 
 export default function ProfilePage() {
+
+  // VER IMPLEMENTACION DE FIRESTORE
+  
+  // const [message, setMessage] = useState('');
+
+  // const handleChange = (event) => {
+  //   setMessage(event.target.value);
+  // };
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   if (message.trim() === '') return; // Evitamos enviar mensajes vacíos
+  //   try {
+  //     const docRef = await addDoc(collection(db, "messages"), { 
+  //     text: message,
+  //     //timestamp: appFirebase.FieldValue.serverTimestamp()
+  //     });
+  //     console.log("Mensaje agregado correctamente", docRef.id);
+  //     setMessage(''); // 
+  //   } catch (error) {
+  //     console.error("Error al agregar el mensaje:", error);
+  //   }
+  // };
+
   return (
     <React.Fragment>
       <CssBaseline />
