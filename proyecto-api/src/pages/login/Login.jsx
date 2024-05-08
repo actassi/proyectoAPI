@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import appFirebase from "../../utils/credenciales";
+import {appFirebase,db} from "../../firebase/Conexion";
 import "./login.css";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import PopUp from "./PopUp";

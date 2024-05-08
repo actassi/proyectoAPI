@@ -5,7 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import appFirebase from "../../utils/credenciales";
+import {appFirebase,db} from "../../firebase/Conexion";
 
 const auth = getAuth(appFirebase);
 
