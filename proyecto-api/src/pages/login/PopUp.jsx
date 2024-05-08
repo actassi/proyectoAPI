@@ -4,8 +4,6 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
 } from "firebase/auth";
 import appFirebase from "../../utils/credenciales";
 
@@ -46,17 +44,7 @@ const PopUp = ({
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      console.log("Inicio de sesión con Google exitoso!");
-      togglePopup();
-    } catch (error) {
-      console.error("Error al iniciar sesión con Google:", error);
-      alert("Error al iniciar sesión con Google");
-    }
-  };
+
 
   return (
     <Modal show={showPopup} onHide={togglePopup} centered>
