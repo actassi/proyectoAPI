@@ -148,12 +148,10 @@ const PopUp = ({
               onChange={handleInputChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="botonAutenticacion crearCuenta">
             {isRegisteringMode ? "Crear Cuenta" : "Iniciar Sesión"}
           </Button>
-          {isRegisteringMode && ( // Mostrar solo si está en modo registro
-            <></>
-          )}
+          
         </Form>
       </Modal.Body>
     </Modal>
