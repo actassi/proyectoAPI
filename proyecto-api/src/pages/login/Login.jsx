@@ -136,7 +136,7 @@ const Login = () => {
           <PopUp
             showPopup={mostrarPopUp}
             togglePopup={togglePopUp}
-            isRegisteringMode={registrando}
+            registro={registrando}
             registrarseConGoogle={registrarseConGoogle}
           />
         )}

@@ -14,7 +14,7 @@ const auth = getAuth(appFirebase);
 const PopUp = ({
   showPopup,
   togglePopup,
-  isRegisteringMode,
+  registro,
   registrarseConGoogle,
 }) => {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ const PopUp = ({
     e.preventDefault();
     const { username, password } = formData;
     try {
-      if (isRegisteringMode) {
+      if (registro) {
         await createUserWithEmailAndPassword(auth, username, password);
         console.log("Usuario creado exitosamente!");
       } else {
@@ -62,7 +62,7 @@ const PopUp = ({
     <Modal show={showPopup} onHide={togglePopup} centered>
       <Modal.Header closeButton>
         <Modal.Title>
-          {isRegisteringMode ? "Crear Cuenta" : "Iniciar Sesión"}
+          {registro ? "Crear Cuenta" : "Iniciar Sesión"}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="d-grid modal-body gap-3 justify-content-center mb-5 mt-5">
@@ -99,7 +99,7 @@ const PopUp = ({
               <path fill="none" d="M0 0h48v48H0z"></path>
             </g>
           </svg>
-          {isRegisteringMode
+          {registro
             ? "Registrarse con Google"
             : "Iniciar Sesión con Google"}
         </button>
@@ -123,7 +123,7 @@ const PopUp = ({
               <path fill="none" d="M0 0h48v48H0z"></path>
             </g>
           </svg>
-          {isRegisteringMode
+          {registro
             ? "Registrarse con Apple"
             : "Iniciar Sesión con Apple"}
         </button>
@@ -149,7 +149,7 @@ const PopUp = ({
             />
           </Form.Group>
           <Button className="botonAutenticacion crearCuenta">
-            {isRegisteringMode ? "Crear Cuenta" : "Iniciar Sesión"}
+            {registro ? "Crear Cuenta" : "Iniciar Sesión"}
           </Button>
           
         </Form>
