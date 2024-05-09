@@ -21,6 +21,7 @@ const Login2 = () => {
       if (registrando) {
         // En caso de registro, utiliza la función createUserWithEmailAndPassword
         await createUserWithEmailAndPassword(auth, email, password);
+        navigate('/home');
       } else {
         // En caso de inicio de sesión, utiliza la función signInWithEmailAndPassword
         await signInWithEmailAndPassword(auth, email, password);
