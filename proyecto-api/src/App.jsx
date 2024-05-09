@@ -12,6 +12,9 @@ import CommunitiesPage from './pages/communities/CommunitiesPage'
 import PremiumPage from './pages/premium/PremiumPage'
 import ProfilePage from './pages/profile/ProfilePage'
 import MorePage from './pages/more/MorePage'
+import { Show } from './pages/crud/Show'
+import { Edit } from './pages/crud/Edit'
+import { Create } from './pages/crud/Create'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {getAuth,onAuthStateChanged} from "firebase/auth"
 import {appFirebase} from "./firebase/Conexion"
@@ -49,6 +52,9 @@ useEffect(() => {
           <Route path="/premium" element={<PremiumPage />} />     
           <Route path="/profile" element={<ProfilePage />} />     
           <Route exact path="/more" element={<MorePage />} />
+          <Route path="/show" element={<Show />} />
+          <Route path="/edit/:id" element={<Edit />} /> 
+          <Route path="/create" element={<Create />} /> 
         </Routes>
     </BrowserRouter>
       
