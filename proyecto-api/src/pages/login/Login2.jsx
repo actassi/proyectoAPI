@@ -1,34 +1,32 @@
-import  { useState } from "react";
-//import imagen from "../../assets/";
-import {appFirebase} from "../../firebase/Conexion";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { appFirebase } from "../../firebase/Conexion";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-const auth = getAuth(appFirebase);
-
 const Login2 = () => {
   const [registrando, setRegistrando] = useState(false);
+  const navigate = useNavigate(); // Obtener el historial de navegación
+  const auth = getAuth(appFirebase);
 
   const funcionDeAutenticacion = async (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-  
+
     try {
       if (registrando) {
         // En caso de registro, utiliza la función createUserWithEmailAndPassword
         await createUserWithEmailAndPassword(auth, email, password);
       } else {
         // En caso de inicio de sesión, utiliza la función signInWithEmailAndPassword
-        const requestBody = {
-          email: email,
-          password: password,
-          returnSecureToken: true
-        };
         await signInWithEmailAndPassword(auth, email, password);
+
+        // Redirige al usuario a la página de inicio
+        navigate('/home');
       }
     } catch (error) {
       // Manejo de errores

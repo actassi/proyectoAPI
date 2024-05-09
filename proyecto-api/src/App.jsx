@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Login2 from './pages/login/Login2'
 import IniPage from './pages/ini/IniPage'
@@ -17,29 +17,29 @@ import {getAuth,onAuthStateChanged} from "firebase/auth"
 import {appFirebase} from "./firebase/Conexion"
 
 
-const auth = getAuth(appFirebase)
 
 function App() {
   const [usuario,setUsuario]= useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+useEffect(() => {
+  const auth = getAuth(appFirebase);
+  const unsubscribe = onAuthStateChanged(auth, (usuarioFirebase) => {
+    if (usuarioFirebase) {
+      setUsuario(usuarioFirebase);
+    } else {
+      setUsuario(null);
+    }
+  });
 
-  
-onAuthStateChanged(auth,(usuarioFirebase)=>{
-  if (usuarioFirebase){
-    setUsuario(usuarioFirebase)
-  }else setUsuario(null)
-});
+  return () => unsubscribe();
+}, []);
 
   return (
     <>
     <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Login2 />} />
-          <Route exact path="/home" element={usuario ? <HomePage correoUsuario = {usuario.email} /> : < IniPage/>} />
+        <Route exact path="/" element={<Login2 />} />
+        <Route exact path="/home" element={usuario ? <HomePage correoUsuario={usuario.email} /> : <IniPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route exact path="/notifications" element={<NotificationsPage />} />    
           <Route path="/messages" element={<MessagesPage />} />
