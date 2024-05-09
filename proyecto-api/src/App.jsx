@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Login2 from './pages/login/Login2'
+import Login from './pages/login/Login'
 import IniPage from './pages/ini/IniPage'
 import HomePage from './pages/home/HomePage'
 import ExplorePage from './pages/explore/ExplorePage'
@@ -41,7 +41,7 @@ useEffect(() => {
     <>
     <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<Login2 />} />
+        <Route exact path="/" element={<Login />} />
         <Route exact path="/home" element={usuario ? <HomePage correoUsuario={usuario.email} /> : <IniPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route exact path="/notifications" element={<NotificationsPage />} />    
