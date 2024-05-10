@@ -61,5 +61,3 @@ const NavLogin = () => {
 };
 
 export default NavLogin;
-
-

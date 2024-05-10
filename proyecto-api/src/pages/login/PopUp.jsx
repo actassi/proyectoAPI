@@ -1,50 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import {appFirebase,db} from "../../firebase/Conexion";
 
-const auth = getAuth(appFirebase);
 
 const PopUp = ({
   showPopup,
   togglePopup,
   registro,
   registrarseConGoogle,
+  funcionDeAutenticacion,
 }) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleAuthentication = async (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
-    const { username, password } = formData;
-    try {
-      if (registro) {
-        await createUserWithEmailAndPassword(auth, username, password);
-        console.log("Usuario creado exitosamente!");
-      } else {
-        await signInWithEmailAndPassword(auth, username, password);
-        console.log("Inicio de sesión exitoso!");
-      }
-      setFormData({ username: "", password: "" });
-      togglePopup();
-    } catch (error) {
-      console.error("Error:", error.message);
-      alert("Usuario o contraseña incorrectos");
-    }
+    const email = e.target.elements.email.value;
+    const password = e.target.elements.password.value;
+
+    // Llama a la función de autenticación pasada como prop
+    await funcionDeAutenticacion(email, password);
   };
-
-
 
   return (
     <Modal show={showPopup} onHide={togglePopup} centered>
@@ -59,6 +31,7 @@ const PopUp = ({
           className="botonAutenticacion mr-3"
           onClick={registrarseConGoogle}
         >
+          
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +59,7 @@ const PopUp = ({
               ></path>
               <path fill="none" d="M0 0h48v48H0z"></path>
             </g>
-          </svg>
-          {registro
+          </svg>{registro
             ? "Registrarse con Google"
             : "Iniciar Sesión con Google"}
         </button>
@@ -115,15 +87,13 @@ const PopUp = ({
             ? "Registrarse con Apple"
             : "Iniciar Sesión con Apple"}
         </button>
-        <Form className="d-grid gap-3" onSubmit={handleAuthentication}>
-          <Form.Group controlId="username">
-            <Form.Label>Nombre de usuario</Form.Label>
+        <Form  className="d-grid gap-3" onSubmit={handleAuth}>
+          <Form.Group controlId="email">
+            <Form.Label>Correo Electrónico</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Ingresa tu nombre de usuario"
-              name="username"
-              value={formData.username}
-              onChange={handleInputChange}
+              type="email"
+              placeholder="Ingresa tu correo"
+              name="email"
             />
           </Form.Group>
           <Form.Group controlId="password">
@@ -132,14 +102,11 @@ const PopUp = ({
               type="password"
               placeholder="Ingresa tu contraseña"
               name="password"
-              value={formData.password}
-              onChange={handleInputChange}
             />
           </Form.Group>
-          <Button className="botonAutenticacion crearCuenta">
+          <Button type="submit" className="botonAutenticacion crearCuenta">
             {registro ? "Crear Cuenta" : "Iniciar Sesión"}
           </Button>
-          
         </Form>
       </Modal.Body>
     </Modal>

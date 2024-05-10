@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import {appFirebase,db} from "../../firebase/Conexion";
+import { appFirebase } from "../../firebase/Conexion";
 import "./login.css";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import PopUp from "./PopUp";
-import Navlogin from "./nav";
+import Navlogin from "./Nav";
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(appFirebase);
@@ -11,47 +17,36 @@ const auth = getAuth(appFirebase);
 const Login = () => {
   const [registrando, setRegistrando] = useState(false);
   const [mostrarPopUp, setMostrarPopUp] = useState(false);
-  const navigate = useNavigate(); // Obtener el historial de navegación
-  
+  const navigate = useNavigate();
 
   const togglePopUp = () => {
     setMostrarPopUp(!mostrarPopUp);
   };
-  
-  const funcionDeAutenticacion = async (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
 
+  const funcionDeAutenticacion = async (email, password) => {
     try {
       if (registrando) {
-        // En caso de registro, utiliza la función createUserWithEmailAndPassword
         await createUserWithEmailAndPassword(auth, email, password);
-        navigate('/home');
       } else {
-        // En caso de inicio de sesión, utiliza la función signInWithEmailAndPassword
         await signInWithEmailAndPassword(auth, email, password);
-
-        // Redirige al usuario a la página de inicio
-        navigate('/home');
       }
+      navigate("/home");
     } catch (error) {
-      // Manejo de errores
       console.error("Error de autenticación:", error);
       alert("El usuario o la contraseña son incorrectos");
     }
   };
 
-  async function registrarseConGoogle() {
+  const registrarseConGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+      navigate("/home");
     } catch (error) {
       console.error("Error al autenticarse con Google:", error);
     }
-  }
+  };
 
-  
   return (
     <>
       <div className="loginContenedorPrincipal">
@@ -65,28 +60,9 @@ const Login = () => {
           </div>
           <div className="logeo">
             <div className="contenedorTitulos">
-              <h1 className="titulo">Lo que está pasando ahora</h1>
+              <div className="contenedorTitulo"><p className="titulo">Lo que está</p>
+              <p className="titulo"> pasando ahora</p></div>
               <h4 className="subtitulo">Únete Hoy</h4>
-
-              <div className="card card-body">
-              <form onSubmit={funcionDeAutenticacion}>
-                <input type="text" placeholder="Ingresar email" id="email" />
-                <input
-                  type="password"
-                  placeholder="Ingresar Contraseña"
-                  id="password"
-                />
-                <button>
-                  {registrando ? "Registrarse" : "Iniciar Sesion"}
-                </button>
-              </form>
-              <h4>
-                ¿Ya tienes cuenta?
-                <button onClick={() => setRegistrando(!registrando)}>
-                  {registrando ? "Iniciar Sesión" : "Registrarse"}
-                </button>
-              </h4>
-            </div>
 
               <button
                 type="button"
@@ -187,6 +163,7 @@ const Login = () => {
             togglePopup={togglePopUp}
             registro={registrando}
             registrarseConGoogle={registrarseConGoogle}
+            funcionDeAutenticacion={funcionDeAutenticacion}
           />
         )}
         <div className="nav">

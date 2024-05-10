@@ -15,78 +15,76 @@
   display: grid;
   padding: 0 10%;
   justify-items: center;
-
- }
+}
 .loginContenedor2 {
   margin-top: 3%;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
   justify-content: center;
-  gap: 7%
+  gap: 7%;
 }
 
-
-@media(max-width:690px){
-  .loginContenedor2{
+@media (max-width: 690px) {
+  .loginContenedor2 {
     grid-template-columns: auto;
     margin: 0 auto;
     padding: 10%;
   }
-  }
-
-.logeo{
-  max-width: 728px;
 }
-@media(max-width:690px){
-  .logeo{
-   display: grid;
 
+.logeo {
+  max-width: 728px;
+
+  display: grid;
+  justify-items: start;
+}
+@media (max-width: 690px) {
+  .logeo {
+    display: grid;
   }
-  }
+}
 .x {
   width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-@media(max-width:690px){
-
-    .x{
-      max-width: 17rem;
-    }
-   
+@media (max-width: 690px) {
+  .x {
+    max-width: 17rem;
+  }
 }
-.tamañox{
+.tamañox {
   max-height: 36rem;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-@media(max-width:690px){
-  .tamañox{
-    max-height:17.1rem;
+@media (max-width: 690px) {
+  .tamañox {
+    max-height: 17.1rem;
     width: 100vw;
     justify-content: left;
-
-
   }
-  }
+}
 .contenedorTitulos {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+.contenedorTitulo{
+margin-bottom: 5%;
+}
 .titulo {
   line-height: 1em;
   font-family: "ChirpHeavy";
-  font-size: 640%;
+  font-size: 82px;
   font-weight: 600;
   align-content: center;
   text-align: left;
   letter-spacing: 5.2px;
-  margin-bottom: 5%;
+  margin-bottom: 0;
 
 }
 .subtitulo {
@@ -94,15 +92,15 @@
   width: 300px;
   text-align: left;
   margin-bottom: 3%;
- 
-letter-spacing: 5.2px;
- 
+
+  letter-spacing: 5.2px;
+
   font-size: 310%;
 }
 .botonAutenticacion {
   border: 1px solid;
   border-color: rgb(207, 217, 222);
-font-size: 140%;
+  font-size: 140%;
   font-family: "ChirpRegular";
   display: flex;
   align-items: center;
@@ -113,7 +111,6 @@ font-size: 140%;
   max-width: 300px;
   min-width: 240px;
   gap: 10px;
-  
 }
 .crearCuenta {
   font-family: "ChirpBold";
@@ -164,7 +161,7 @@ font-size: 140%;
   text-decoration: none;
   color: rgb(29, 155, 240);
 }
-.nav{
+.nav {
   margin-top: 10%;
 }
 .navLogin {
