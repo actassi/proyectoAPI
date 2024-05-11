@@ -8,6 +8,8 @@ import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
 
+const margenSup = '10px';
+
 export default function ProfilePage() {
   return (
     <React.Fragment>
