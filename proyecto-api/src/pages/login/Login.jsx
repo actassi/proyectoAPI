@@ -9,7 +9,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import PopUp from "./PopUp";
-import Navlogin from "./Nav";
+import Navlogin from "./nav";
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(appFirebase);
