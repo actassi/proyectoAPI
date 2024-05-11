@@ -10,6 +10,8 @@ import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
+const margenSup = '10px';
+
 export default function HomePage() {
   return (
     <React.Fragment>
@@ -17,11 +19,11 @@ export default function HomePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px' }}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
             <DrawerLeft selectedPath={'/'} />
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: '-22px'} }>
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup} }>
             <Box
                 display="flex"
                 alignItems="center"
@@ -37,7 +39,7 @@ export default function HomePage() {
             <p>PAGINA DE INICIO</p>
             
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px'}}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
             {/* Contenido aquí */}
             <TextField
             fullWidth

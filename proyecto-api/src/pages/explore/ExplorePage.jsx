@@ -10,6 +10,8 @@ import { Search as SearchIcon } from '@mui/icons-material';
 //import { collection, addDoc } from "firebase/firestore"; 
 //import { db } from '../../firebase/Conexion'
 
+const margenSup = '10px';
+
 export default function ProfilePage() {
 
   // VER IMPLEMENTACION DE FIRESTORE
@@ -41,11 +43,11 @@ export default function ProfilePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px' }}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
             <DrawerLeft selectedPath={'/explore'}/>
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: '-22px'} }>
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup} }>
             <Box
                 display="flex"
                 alignItems="center"
@@ -59,7 +61,7 @@ export default function ProfilePage() {
             </Box>
            
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px'}}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
             {/* Contenido aquí */}
             <TextField
             fullWidth

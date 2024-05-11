@@ -8,6 +8,8 @@ import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import PexelsAPIComponent from '../../components/apis/pexeles/Pexeles';
 
+const margenSup = '10px';
+
 export default function ProfilePage() {
   return (
     <React.Fragment>
@@ -15,11 +17,11 @@ export default function ProfilePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px' }}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
             <DrawerLeft selectedPath={'/messages'} />
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: '-22px'} }>
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup} }>
             <Box
                 display="flex"
                 alignItems="center"
@@ -34,7 +36,7 @@ export default function ProfilePage() {
             </Box>
             
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: '-22px'}}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
             {/* Contenido aquí */}
             <TextField
             fullWidth
