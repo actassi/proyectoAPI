@@ -4,11 +4,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import DrawerLeft from '../../components/drawer/Drawer';
-import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
-
-const margenSup = '10px';
+import EditProfile from './EditProfile';
 
 export default function ProfilePage() {
   return (
@@ -21,7 +19,7 @@ export default function ProfilePage() {
             <DrawerLeft selectedPath={'/profile'}/>
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: margenSup} }>
+          <Grid item xs={12} md={6} sx={{ marginTop: '-22px', display: 'flex', justifyContent: 'center' }}>
             <Box
                 display="flex"
                 alignItems="center"
@@ -30,31 +28,30 @@ export default function ProfilePage() {
                 backgroundColor="transparent"
                 borderRadius="1px"
                 padding="0.1rem "
+                width="100%" // Asegura que ocupe todo el ancho disponible
             >
-            <p>ESTO ES LA PAGINA DE PROFILE</p>
+              <EditProfile />
             </Box>
-            
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
-            {/* Contenido aquí */}
+          <Grid item xs={12} md={3} sx={{ marginTop: '-22px'}}>
             <TextField
-            fullWidth
-            variant="outlined"
-            placeholder="Search..."
-            InputProps={{
-                startAdornment: (
-                <InputAdornment position="start">
-                    <SearchIcon />
-                </InputAdornment>
-                ),
-                sx: {
-                bgcolor: '#ffffff', // Fondo gris claro
-                borderRadius: '999px', // Borde redondeado
-                '& input': {
-                    borderRadius: '999px', // Borde redondeado
-                },
-                },
-            }}
+              fullWidth
+              variant="outlined"
+              placeholder="Search..."
+              InputProps={{
+                  startAdornment: (
+                  <InputAdornment position="start">
+                      <SearchIcon />
+                  </InputAdornment>
+                  ),
+                  sx: {
+                  bgcolor: '#ffffff', // Fondo gris claro
+                  borderRadius: '999px', // Borde redondeado
+                  '& input': {
+                      borderRadius: '999px', // Borde redondeado
+                  },
+                  },
+              }}
             />
           </Grid>
         </Grid>
@@ -62,6 +59,5 @@ export default function ProfilePage() {
     </React.Fragment>
   );
 }
-
 
 
