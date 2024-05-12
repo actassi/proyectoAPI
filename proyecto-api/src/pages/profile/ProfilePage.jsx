@@ -7,6 +7,7 @@ import DrawerLeft from '../../components/drawer/Drawer';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
+import CardMensajes from '../../components/cards/CardMensajes';
 
 const margenSup = '10px';
 
@@ -32,7 +33,9 @@ export default function ProfilePage() {
                 padding="0.1rem "
             >
                <EditProfile />
-            
+               {/* <CardMensajes sx={{ width: '100%' }}/> */}
+               <CardMensajes />
+               
             </Box>
             
           </Grid>
