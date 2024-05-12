@@ -60,6 +60,7 @@ import { getAuth } from "firebase/auth";
       
         return user ? (
           <div>
+            
             <p>Email: {user.email}</p>
             <p>Usuario: {user.displayName}</p>
           </div>

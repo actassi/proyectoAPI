@@ -112,7 +112,7 @@
 
 // export default EditProfile;
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/Conexion.js";
 import { getAuth } from "firebase/auth";
@@ -120,10 +120,10 @@ import { Button, TextField, Grid, Paper } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CurrentUser from "./User";
 
-const auth = getAuth();
-const user = auth.currentUser;
-
 const EditProfile = () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const theme = createTheme({
     components: {
       MuiPaper: {
@@ -141,6 +141,11 @@ const EditProfile = () => {
   const [biografia, setBiografia] = useState("");
   const [ubicacion, setUbicacion] = useState("");
   const [web, setWeb] = useState("");
+  const [correo, setCorreo] = useState(user && user.email ? user.email : "");
+
+  useEffect(() => {
+    setCorreo(user && user.email ? user.email : "");
+  }, [user]);
 
   const editarUsuarios = async (e) => {
     e.preventDefault();
@@ -149,9 +154,9 @@ const EditProfile = () => {
       biografia: biografia,
       ubicacion: ubicacion,
       web: web,
-      correo: user.email
-     };
-     
+      correo: correo
+    };
+    
     const usuarios = collection(db, "usuarios");
     console.log(usuario);
     await addDoc(usuarios, usuario);
@@ -217,7 +222,7 @@ const EditProfile = () => {
                 type="text"
                 autoComplete="text"
               />
-
+              
               <div>
                 <p>Fecha de Nacimiento</p>           
 
@@ -240,4 +245,3 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
-
