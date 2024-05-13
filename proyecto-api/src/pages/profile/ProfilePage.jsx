@@ -8,7 +8,7 @@ import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
 import TraerMensajes from '../../components/cards/CardTraerMensajes';
-import LogOut from '../login/LogOut';
+import LogOut from '../login/Logout';
 
 const margenSup = '10px';
 

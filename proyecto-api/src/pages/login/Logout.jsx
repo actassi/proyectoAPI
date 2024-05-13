@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/Conexion"; 
-import BlueButton from '../../components/buttons/Button'
+import BlueButton from '../../components/buttons/BlueButton'
 
 const LogOut = () => {
     const navigate = useNavigate();
