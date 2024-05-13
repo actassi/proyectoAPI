@@ -1,8 +1,9 @@
-import { Button } from '@mui/material';
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/Conexion"; // Importa 'auth' desde 'Conexion.js'
 
-const LogoutButton = () => {
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/Conexion"; 
+import BlueButton from '../../components/buttons/Button'
+
+const LogOut = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -11,11 +12,12 @@ const LogoutButton = () => {
     };
 
     return (
-        <Button variant="contained" color="primary" onClick={handleLogout}>
-            Logout
-        </Button>
+
+    <BlueButton onClick={handleLogout}> LogOut </BlueButton> 
+
+       // <Button variant="contained" color="primary" onClick={handleLogout}>
     );
 };
 
-export default LogoutButton;
+export default LogOut;
 

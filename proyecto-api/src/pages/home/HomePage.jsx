@@ -10,6 +10,7 @@ import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import GiphyViewer from '../../components/apis/giphy/Giphy';
+import LogOut from '../login/LogOut';
 
 const margenSup = '10px';
 
@@ -42,6 +43,7 @@ export default function HomePage() {
           </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
             {/* Contenido aquí */}
+            <LogOut />
             <TextField
             fullWidth
             variant="outlined"

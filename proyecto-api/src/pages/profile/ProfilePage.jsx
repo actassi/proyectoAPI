@@ -8,7 +8,7 @@ import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
 import CardMensajes from '../../components/cards/CardMensajes';
-import LogoutButton from '../login/Logout';
+import LogOut from '../login/LogOut';
 
 const margenSup = '10px';
 
@@ -41,7 +41,7 @@ export default function ProfilePage() {
             
           </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
-          <LogoutButton />
+          <LogOut />
             {/* Contenido aquí */}
             <TextField
             fullWidth
