@@ -1,0 +1,23 @@
+.notificacion{
+    padding: 2% 1%;
+    background-color: wheat;
+    width: 50%;
+}
+.box{
+    display: grid;
+    grid-template-columns: 52px auto;
+    justify-items: stretch;
+    align-items: baseline;
+
+}
+
+
+.contenedorImagen{
+    width: 100%;
+    display: grid;
+
+}
+.svgImg{
+    max-width: 24px;
+}
+.img1{min-height: 50%}
