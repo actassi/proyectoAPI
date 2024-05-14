@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { CssBaseline, Box, Grid, Container, Card, CardContent, TextField, InputAdornment } from '@mui/material';
+import { CssBaseline, Box, Grid, Container, TextField, InputAdornment } from '@mui/material';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/Conexion.js';
 import DrawerLeft from '../../components/drawer/Drawer';
@@ -8,8 +8,7 @@ import { Search as SearchIcon } from '@mui/icons-material';
 import LogOut from '../login/LogOut';
 import MandarMensajes from '../../components/cards/CardMandarMensajes'; // Ajusta la ruta según sea necesario
 import GiphyViewer from '../../components/apis/giphy/Giphy'; // Importar GiphyViewer
-import UnderlineTabs from '../../components/tabs/Tabs1';
-import { MdOutlineSettings } from 'react-icons/md';
+import TraerMensajes from '../../components/cards/CardTraerMensajes';
 
 const margenSup = '80px';
 
@@ -21,7 +20,7 @@ export default function HomePage() {
     const obtenerMensajes = async () => {
       const mensajesSnapshot = await getDocs(collection(db, "mensajes"));
       const mensajesList = mensajesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setMensajes(mensajesList);
+      setMensajes(mensajesList.reverse()); // Ordenar los mensajes de último a primero
     };
 
     // Llamar a la función para obtener los mensajes cuando el componente se monta
@@ -52,25 +51,22 @@ export default function HomePage() {
               borderRadius="1px"
               padding="0.1rem"
             >
-              <UnderlineTabs />
-              <MdOutlineSettings size={20} color="black" /> 
+              {/* <UnderlineTabs />
+              <MdOutlineSettings size={20} color="black" /> */}
             </Box>
             <MandarMensajes onMessageSent={handleNuevoMensaje} />
-            {/* Mostrar los mensajes */}
+            {/* Mostrar los mensajes (ahora ordenados) */}
             {mensajes.map(mensaje => (
-              <Card key={mensaje.id} sx={{ marginTop: '10px' }}>
-                <CardContent>
-                  <p>{mensaje.texto}</p>
-                </CardContent>
-              </Card>
+              <TraerMensajes key={mensaje.id} mensaje={mensaje} />
             ))}
             {/* Mostrar GiphyViewer */}
             <GiphyViewer />
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup, position: 'sticky'}}>
             <LogOut />
-            <TextField
+            <TextField 
               fullWidth
+              
               variant="outlined"
               placeholder="Search..."
               InputProps={{
