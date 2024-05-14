@@ -19,7 +19,17 @@ export default function ProfilePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
+          <Grid 
+            item 
+            xs={12} 
+            md={3} 
+            sx={{ 
+              marginTop: margenSup, 
+              position: 'sticky', 
+              top: '0', 
+              alignSelf: 'flex-start' 
+            }}
+          >
             <DrawerLeft />
           </Grid>
           {/* Contenido centrado */}
@@ -40,17 +50,7 @@ export default function ProfilePage() {
             </Box>
             
           </Grid>
-          <Grid 
-            item 
-            xs={12} 
-            md={3} 
-            sx={{ 
-              marginTop: margenSup, 
-              position: 'sticky', 
-              top: '0', 
-              alignSelf: 'flex-start' 
-            }}
-          >
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
           <LogOut />
             {/* Contenido aquí */}
             <TextField
@@ -78,6 +78,3 @@ export default function ProfilePage() {
     </React.Fragment>
   );
 }
-
-
-

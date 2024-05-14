@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import DrawerLeft from '../../components/drawer/Drawer';
-import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 //import { collection, addDoc } from "firebase/firestore"; 
