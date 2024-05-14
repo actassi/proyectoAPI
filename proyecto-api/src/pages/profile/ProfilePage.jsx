@@ -45,7 +45,7 @@ export default function ProfilePage() {
             >
                <EditProfile />
                {/* <CardMensajes sx={{ width: '100%' }}/> */}
-               <TraerMensajes />
+              
                
                
             </Box>

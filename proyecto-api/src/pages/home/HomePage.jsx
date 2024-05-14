@@ -56,17 +56,14 @@ export default function HomePage() {
             </Box>
             <MandarMensajes onMessageSent={handleNuevoMensaje} />
             {/* Mostrar los mensajes (ahora ordenados) */}
-            {mensajes.map(mensaje => (
-              <TraerMensajes key={mensaje.id} mensaje={mensaje} />
-            ))}
+            <TraerMensajes mensajes={mensajes} />
             {/* Mostrar GiphyViewer */}
             <GiphyViewer />
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup, position: 'sticky'}}>
+          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
             <LogOut />
             <TextField 
               fullWidth
-              
               variant="outlined"
               placeholder="Search..."
               InputProps={{

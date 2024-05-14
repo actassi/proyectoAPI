@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, CardContent, CardHeader, Grid, TextField, InputAdornment } from '@mui/material';
+import { Avatar, Button, Card, CardContent, CardHeader, Grid, TextField } from '@mui/material';
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/Conexion.js";
@@ -17,9 +17,10 @@ const MandarMensajes = ({ onMessageSent }) => {
     e.preventDefault();
     const mensaje = {
       texto: texto,
-      correo: correo
+      correo: correo,
+      photoURL: avatar // Asegúrate de agregar la URL de la foto al mensaje
     };
-    
+
     try {
       const mensajes = collection(db, "mensajes");
       const docRef = await addDoc(mensajes, mensaje);
@@ -44,8 +45,8 @@ const MandarMensajes = ({ onMessageSent }) => {
       />
       <CardContent>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <TextField
+          <Grid item xs={12} sm={12}>
+            <TextField
               fullWidth
               variant="outlined"
               placeholder="Escribe tu mensaje..."
@@ -93,6 +94,6 @@ const MandarMensajes = ({ onMessageSent }) => {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default MandarMensajes;
