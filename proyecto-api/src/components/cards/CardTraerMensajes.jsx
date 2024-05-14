@@ -91,7 +91,7 @@ import { getAuth } from "firebase/auth";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../firebase/Conexion.js"
 
-export default function CardPersonal() {
+export default function TraerMensajes() {
   const [isHovered, setIsHovered] = React.useState(false);
   const [avatar, setAvatar] = useState("");
   const [mensajes, setMensajes] = useState([]);

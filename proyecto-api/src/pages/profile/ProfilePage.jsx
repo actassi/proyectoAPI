@@ -40,7 +40,17 @@ export default function ProfilePage() {
             </Box>
             
           </Grid>
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup}}>
+          <Grid 
+            item 
+            xs={12} 
+            md={3} 
+            sx={{ 
+              marginTop: margenSup, 
+              position: 'sticky', 
+              top: '0', 
+              alignSelf: 'flex-start' 
+            }}
+          >
           <LogOut />
             {/* Contenido aquí */}
             <TextField

@@ -162,13 +162,13 @@ margin-bottom: 5%;
   color: rgb(29, 155, 240);
 }
 .nav {
-  margin-top: 10%;
+  margin-top: 7%;
 }
 .navLogin {
   display: flex;
   gap: 10px;
   flex-flow: wrap;
-  justify-content: center;
+  justify-content: space-around;
   line-height: 1;
   align-items: baseline;
   height: 22%;
