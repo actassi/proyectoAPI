@@ -9,7 +9,7 @@ import { InputAdornment, TextField } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
 import "./notificaciones.css";
 import Megusta from "../../components/buttons/Megusta";
-
+import AvatarComponent from "../../components/apis/Avatar"
 const margenSup = "10px";
 
 export default function ProfilePage() {
@@ -30,12 +30,40 @@ export default function ProfilePage() {
             <div className="box">
               <div className="contenedorImagen">
                 <div className="img1">
-                <Megusta></Megusta>
+                <Megusta icon="notification" color="rgb(29, 155, 240)" />
                 </div>
               </div>
               <div className="card">
-               
-                <p>ESTO ES LA PAGINA DE NOTIFICATIONS</p>
+                
+                
+                <AvatarComponent showAvatar={true} />
+                <p className="etiquetaP">Nuevas notificaciones de posts para <b> <AvatarComponent showAvatar={false} /></b></p>
+              </div>
+            </div>
+            <div className="box">
+              <div className="contenedorImagen">
+                <div className="img1">
+                <Megusta icon="favorite" color="rgb(249, 24, 128)" />
+                </div>
+              </div>
+              <div className="card">
+                
+                
+                <AvatarComponent showAvatar={true} />
+                <p className="etiquetaP"><b> <AvatarComponent showAvatar={false} /></b> Indico que le gusta tu publicacion </p>
+              </div>
+            </div>
+            <div className="box">
+              <div className="contenedorImagen">
+                <div className="img1">
+                <Megusta icon="favorite" color="rgb(249, 24, 128)" />
+                </div>
+              </div>
+              <div className="card">
+                
+                
+                <AvatarComponent showAvatar={true} />
+                <p className="etiquetaP"><b> <AvatarComponent showAvatar={false} /></b> Indico que le gusta tu publicacion </p>
               </div>
             </div>
           </div>
