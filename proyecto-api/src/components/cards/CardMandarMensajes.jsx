@@ -4,9 +4,11 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/Conexion.js";
 import { getAuth } from "firebase/auth";
 
-const CardPersonal = () => {
+const MandarMensajes = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+  const avatar = user.photoURL
+  const name = user.displayName
 
   const [texto, setTexto] = useState("");
   const [correo, setCorreo] = useState(user && user.email ? user.email : "");
@@ -32,8 +34,8 @@ const CardPersonal = () => {
       <CardHeader
         avatar={
           <Avatar 
-            alt="Remy Sharp"
-            src="Foto CV.jpg"
+            alt={name}
+            src={avatar}
             sx={{ width: 48, height: 48 }} >
           </Avatar>
         }
@@ -42,13 +44,13 @@ const CardPersonal = () => {
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
-              onClick={crearMensaje} // Cambiado a onClick en lugar de onSubmit
+              onClick={crearMensaje} 
               variant="contained"
               sx={{
-                borderRadius: '999px', // Hace que el botón sea redondeado
-                bgcolor: '#7abaff', // Color azul claro
+                borderRadius: '999px', 
+                bgcolor: '#7abaff', 
                 '&:hover': {
-                  bgcolor: '#59a3f7', // Color azul claro más claro al pasar el cursor
+                  bgcolor: '#59a3f7', 
                 },
               }}
             >
@@ -61,4 +63,4 @@ const CardPersonal = () => {
   );
 }
 
-export default CardPersonal;
+export default MandarMensajes;
