@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, CardHeader, Avatar, CardMedia } from '@mui/material';
 
@@ -20,17 +20,17 @@ const GiphyViewer = () => {
       
       data.forEach((item) => {
         console.log('Type:', item.type);
-        console.log('ID:', item.id);
-        console.log('URL:', item.url);
-        console.log('Slug:', item.slug);
-        console.log('Title:', item.title);
-        console.log('Username:', item.username);
-        console.log('Source:', item.source);
-        console.log('Original Image URL:', item.images.original.url);
-        console.log('Fixed Width Image URL:', item.images.fixed_width.url);
-        console.log('Avatar URL:', item.user?.avatar_url || 'URL de Avatar no disponible');
+        // console.log('ID:', item.id);
+        // console.log('URL:', item.url);
+        // console.log('Slug:', item.slug);
+        // console.log('Title:', item.title);
+        // console.log('Username:', item.username);
+        // console.log('Source:', item.source);
+        // console.log('Original Image URL:', item.images.original.url);
+        // console.log('Fixed Width Image URL:', item.images.fixed_width.url);
+        // console.log('Avatar URL:', item.user?.avatar_url || 'URL de Avatar no disponible');
 
-        console.log('Display Name:', item.user?.display_name || 'Nombre de usuario no disponible');
+        // console.log('Display Name:', item.user?.display_name || 'Nombre de usuario no disponible');
 
       });
 

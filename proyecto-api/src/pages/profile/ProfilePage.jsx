@@ -8,7 +8,7 @@ import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
 import TraerMensajes from '../../components/cards/CardTraerMensajes';
-import LogOut from '../login/Logout';
+import LogOut from '../login/LogOut';
 
 const margenSup = '10px';
 
@@ -19,7 +19,17 @@ export default function ProfilePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
+          <Grid 
+            item 
+            xs={12} 
+            md={3} 
+            sx={{ 
+              marginTop: margenSup, 
+              position: 'sticky', 
+              top: '0', 
+              alignSelf: 'flex-start' 
+            }}
+          >
             <DrawerLeft />
           </Grid>
           {/* Contenido centrado */}
@@ -35,7 +45,8 @@ export default function ProfilePage() {
             >
                <EditProfile />
                {/* <CardMensajes sx={{ width: '100%' }}/> */}
-               <TraerMensajes />
+              
+               
                
             </Box>
             
@@ -68,6 +79,3 @@ export default function ProfilePage() {
     </React.Fragment>
   );
 }
-
-
-

@@ -21,7 +21,17 @@ export default function ProfilePage() {
             <DrawerLeft selectedPath={'/bookmarks'}/>
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: margenSup} }>
+          <Grid 
+            item 
+            xs={12} 
+            md={3} 
+            sx={{ 
+              marginTop: margenSup, 
+              position: 'sticky', 
+              top: '0', 
+              alignSelf: 'flex-start' 
+            }}
+          >
             <Box
                 display="flex"
                 alignItems="center"

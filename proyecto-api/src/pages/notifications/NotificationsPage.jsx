@@ -21,6 +21,7 @@ export default function ProfilePage() {
           {/* DrawerLeft */}
           <Grid item xs={12} md={3}>
             <DrawerLeft selectedPath={"/notifications"} />
+
           </Grid>
           {/* Contenido centrado */}
           <div

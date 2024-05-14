@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import DrawerLeft from '../../components/drawer/Drawer';
-import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 //import { collection, addDoc } from "firebase/firestore"; 
@@ -43,7 +42,17 @@ export default function ProfilePage() {
       <Container maxWidth="xl" sx={{ marginLeft: '-10px', marginTo: '-80px' }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
+          <Grid 
+            item 
+            xs={12} 
+            md={3} 
+            sx={{ 
+              marginTop: margenSup, 
+              position: 'sticky', 
+              top: '0', 
+              alignSelf: 'flex-start' 
+            }}
+          >
             <DrawerLeft selectedPath={'/explore'}/>
           </Grid>
           {/* Contenido centrado */}
