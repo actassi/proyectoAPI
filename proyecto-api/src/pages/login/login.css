@@ -131,6 +131,7 @@ margin-bottom: 5%;
   flex-direction: column;
   gap: 20px;
   justify-content: flex-end;
+  min-width: 300px
 }
 
 .yaTienesCuenta__boton {
