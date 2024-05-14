@@ -96,7 +96,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from '../../firebase/Conexion.js';
 import DrawerLeft from '../../components/drawer/Drawer';
 import { Search as SearchIcon } from '@mui/icons-material';
-import LogOut from '../login/LogOut';
+import LogOut from '../login/Logout.jsx';
 import MandarMensajes from '../../components/cards/CardMandarMensajes'; // Ajusta la ruta según sea necesario
 import GiphyViewer from '../../components/apis/giphy/Giphy'; // Importar GiphyViewer
 import TraerMensajes from '../../components/cards/CardTraerMensajes';
