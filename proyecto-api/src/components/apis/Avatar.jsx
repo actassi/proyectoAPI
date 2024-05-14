@@ -3,24 +3,16 @@ import axios from "axios";
 import { Avatar } from "@mui/material";
 
 const AvatarComponent = ({ showAvatar }) => { 
-  const [randomGif, setRandomGif] = useState(null);
+  const [usuario, setUsuario] = useState(null);
 
   const fetchGifs = async () => {
     try {
-      const response = await axios.get(
-        "https://api.giphy.com/v1/gifs/trending?",
-        {
-          params: {
-            api_key: "3RIMrU9XBRB9rNEJ6zUxrB6hB7i2ad23",
-            limit: 10, // Cantidad de GIFs a obtener
-          },
-        }
-      );
-      const data = response.data.data;
+      const response = await axios.get('https://randomuser.me/api/');
+      const data = response.data;
 
-      // Selecciona un GIF aleatorio
-      const randomIndex = Math.floor(Math.random() * data.length);
-      setRandomGif(data[randomIndex]);
+      
+      setUsuario(data);
+ 
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -33,12 +25,12 @@ const AvatarComponent = ({ showAvatar }) => {
   return (
     <div>
       <div>
-        {randomGif && (
+        {usuario && (
           <div>
             {showAvatar && (
-              <Avatar alt={randomGif.username} src={randomGif.user?.avatar_url || ""} />
+              <Avatar alt={"foto"} src={usuario.results[0].picture.thumbnail|| ""} />
             )}
-            {!showAvatar && <p>{randomGif.user?.display_name}</p>}
+            {!showAvatar && <p>{usuario.results[0].name.first +" "+ usuario.results[0].name.last}</p>}
           </div>
         )}
       </div>
