@@ -50,7 +50,7 @@ export default function HomePage() {
             placeholder="Search..."
             InputProps={{
                 startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment position="start" >
                     <SearchIcon />
                 </InputAdornment>
                 ),
