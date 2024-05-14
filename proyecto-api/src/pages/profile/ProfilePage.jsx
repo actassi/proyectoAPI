@@ -9,7 +9,6 @@ import { Search as SearchIcon } from '@mui/icons-material';
 import EditProfile from './EditProfile';
 import TraerMensajes from '../../components/cards/CardTraerMensajes';
 import LogOut from '../login/LogOut';
-import MandarMensajes from '../../components/cards/CardMandarMensajes';
 
 const margenSup = '10px';
 
@@ -47,7 +46,7 @@ export default function ProfilePage() {
                <EditProfile />
                {/* <CardMensajes sx={{ width: '100%' }}/> */}
                <TraerMensajes />
-               <MandarMensajes/>
+               
                
             </Box>
             
