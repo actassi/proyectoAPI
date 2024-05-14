@@ -3,7 +3,7 @@ import axios from "axios";
 import { Avatar } from "@mui/material";
 
 const AvatarComponent = ({ showAvatar }) => { 
-  const [gifs, setGifs] = useState([]);
+  const [randomGif, setRandomGif] = useState(null);
 
   const fetchGifs = async () => {
     try {
@@ -12,13 +12,15 @@ const AvatarComponent = ({ showAvatar }) => {
         {
           params: {
             api_key: "3RIMrU9XBRB9rNEJ6zUxrB6hB7i2ad23",
-            limit: 5, // Cantidad de GIFs a obtener
+            limit: 10, // Cantidad de GIFs a obtener
           },
         }
       );
       const data = response.data.data;
 
-      setGifs(data);
+      // Selecciona un GIF aleatorio
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setRandomGif(data[randomIndex]);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -31,14 +33,14 @@ const AvatarComponent = ({ showAvatar }) => {
   return (
     <div>
       <div>
-        {gifs.map((gif, index) => (
-          <div key={index}>
+        {randomGif && (
+          <div>
             {showAvatar && (
-              <Avatar alt={gif.username} src={gif.user?.avatar_url || ""} />
+              <Avatar alt={randomGif.username} src={randomGif.user?.avatar_url || ""} />
             )}
-            {!showAvatar && <p>{gif.user?.display_name}</p>}
+            {!showAvatar && <p>{randomGif.user?.display_name}</p>}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
