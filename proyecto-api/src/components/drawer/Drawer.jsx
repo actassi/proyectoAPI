@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import { Button, Container, ListItemIcon, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ListItemButton from '@mui/material/ListItemButton';
+import "./estilo.css";
 
 import X from '../x/X'
 
@@ -39,11 +40,12 @@ import { IoPersonSharp } from "react-icons/io5";
 
 import ButtonDrawer from '../cards/ButtonDrawer';
 
+
 const drawerWidth = 40;
 const sizeIcon = 25;
 
 const menuItems = [  
-  { text: 'Home', icon: <GoHome size={sizeIcon} color='black' />, altIcon: <GoHomeFill size={sizeIcon} color='black' />, path: '/home' },
+  { text: 'Home', icon: <GoHome size={sizeIcon} color='black' />, altIcon: <GoHomeFill size={sizeIcon} color='black' />, path: '/home'},
   { text: 'Explore', icon: <FiSearch size={sizeIcon} color='black' />, altIcon: <RiSearchFill size={sizeIcon} color='black' />, path: '/explore' },
   { text: 'Notifications', icon: <PiBellBold size={sizeIcon} color='black' />, altIcon: <PiBellFill size={sizeIcon} color='black' />, path: '/notifications' },
   { text: 'Messages', icon: <LuMail size={sizeIcon} color='black' />, altIcon: <HiMail size={sizeIcon} color='black' />, path: '/messages' },
@@ -80,8 +82,8 @@ const menuItems = [
               }}
               variant="permanent"
               anchor="left"
-              display="flex"
-            >
+
+              display="table-column-group"            >
               <Toolbar />
               <List style={{ display: 'flex', flexDirection: 'column' }}>
                 <X  width="30px" style={{ marginBottom: '16px', marginLeft: '-50px' }} />
@@ -91,15 +93,19 @@ const menuItems = [
                     key={item.text}
                     disablePadding
                     style={{ marginBottom: '14px', fontSize: '20px', marginLeft: '-66px' }}
-                    sx={{ fontFamily: 'TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', fontSize: '30px' }}
                     selected={selectedItem === item.path}
+                    className='menu-text'
                     onClick={() => handleItemClick(item.path)}
+    
+                    
+                    
                   >
-                    <ListItemButton component={Link} to={item.path}>
-                      <ListItemIcon>
+                    <ListItemButton component={Link} to={item.path} >
+                      <ListItemIcon >
                         {selectedPath === item.path ? item.altIcon : item.icon}
+                        
                       </ListItemIcon>
-                      <ListItemText primary={item.text} />
+                      <ListItemText/>{item.text}
                     </ListItemButton>
                   </ListItem>
                 ))}
@@ -107,7 +113,7 @@ const menuItems = [
                   variant="contained"
                   sx={{
                     marginLeft: '-66px',
-                    width: '220px',
+                    width:"220px",
                     height: '50px',
                     borderRadius: '999px', // Hace que el botón sea redondeado
                     bgcolor: 'rgb(29, 155, 240)', // Color azul claro
