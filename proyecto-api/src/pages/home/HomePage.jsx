@@ -153,7 +153,7 @@ export default function HomePage() {
             <GiphyViewer />
           </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
-          <LogOut />
+          
             <TextField 
               fullWidth
               variant="outlined"
