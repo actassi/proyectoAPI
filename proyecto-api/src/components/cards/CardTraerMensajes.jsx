@@ -32,7 +32,7 @@ const TraerMensajes = ({ mensajes }) => {
               <Box                 sx={{ textAlign:"justify",marginTop:"7%"}}
 >
                 <p style={{ marginBottom: "6px", color: "gray" }}>
-                  {mensaje.displayName}
+                {mensaje.displayName != null && mensaje.displayName !== "" ? mensaje.displayName : mensaje.correo}
                 </p>
                 <p>{mensaje.texto}</p>
                 <p></p>
