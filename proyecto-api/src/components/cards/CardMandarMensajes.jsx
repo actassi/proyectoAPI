@@ -247,10 +247,26 @@ const MandarMensajes = ({ onMessageSent }) => {
             sx={{ width: 48, height: 48 }} 
           />
         }
+        title={
+          <input
+            id="input-mode"
+            type="text"
+            placeholder="What is happening?!"
+            style={{
+              width: '100%',
+              padding: '8px 12px',
+              fontSize: '1rem',
+              border: 'none', // Oculta el borde
+              outline: 'none', // Oculta el contorno de enfoque
+            }}
+            value={texto}
+            onChange={(e) => setTexto(e.target.value)}
+          />
+      }
       />
       <CardContent>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          {/*<Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <TextField
               fullWidth
               variant="outlined"
@@ -279,7 +295,7 @@ const MandarMensajes = ({ onMessageSent }) => {
                 },
               }}
             />
-          </Grid>
+            </Grid>*/}
           <Grid item xs={12} sm={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
               onClick={crearMensaje} 
@@ -292,7 +308,7 @@ const MandarMensajes = ({ onMessageSent }) => {
                 },
               }}
             >
-              Enviar
+              Post
             </Button>
           </Grid>
         </Grid>

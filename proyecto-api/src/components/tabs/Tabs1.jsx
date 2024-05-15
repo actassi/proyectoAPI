@@ -15,7 +15,7 @@ export default function UnderlineTabs() {
         onClick={() => setSelectedIndex(i)}
         style={{
           padding: "0.6rem 0.7rem",
-          margin: "0 3rem", // Ajuste del margen horizontal
+          margin: "0 2rem", // Ajuste del margen horizontal
           border: 0,
           cursor: "pointer",
           display: "flex", // Añadido para alinear contenido verticalmente

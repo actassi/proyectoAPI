@@ -2,9 +2,35 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Popper from '@mui/material/Popper';
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase/Conexion"; 
+import { Button, Fade, Paper, Typography } from '@mui/material';
+import { getAuth } from "firebase/auth";
+
 
 export default function UserProfile() {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+
+  const navigate = useNavigate();
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+  let avatar = '';
+  let name = '';
+
+  if (user) {
+    avatar = user.photoURL || ''; // Si photoURL es null, asigna un valor vacío
+    name = user.displayName || ''; // Si displayName es null, asigna un valor vacío
+  }
+
+  const handleLogout = () => {
+    auth.signOut(); // Utiliza 'auth' desde 'Conexion.js'
+    navigate("/");
+  };
+
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -13,6 +39,13 @@ export default function UserProfile() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  const handlePopper = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen(!(open));
+
+  };
+
 
   return (
     <div 
@@ -31,14 +64,38 @@ export default function UserProfile() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Avatar alt="Jorge" src="Foto CV.jpg" sx={{ width: 40, height: 40 }} />
+      <Popper
+        // Note: The following zIndex style is specifically for documentation purposes and may not be necessary in your application.
+        sx={{ zIndex: 1200, padding: 4 }}
+        open= {open}
+        anchorEl={anchorEl}
+        placement='top-start'
+        transition
+        modifiers={[
+          {
+            name: 'offset',
+            options: {
+              offset: [-200, 0], // Ajusta el desplazamiento aquí (20 píxeles hacia la derecha)
+            },
+          },
+        ]}
+      >
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps} timeout={350}>
+            <Paper>
+              <Button onClick={handleLogout}>Log out @{name} </Button>
+            </Paper>
+          </Fade>
+        )}
+      </Popper>
+      <Avatar alt={name} src={avatar} sx={{ width: 40, height: 40 }} />
       <div style={{ flex: 1 }}>
         <p style={{ marginBottom: '0', fontWeight: 'bold', color: 'black' }}>Jorge Martinez</p>
         <p style={{ marginBottom: '0', color: 'gray' }}>@JorgeMa12345</p>
       </div>
       <div style={{ flex: 1 }}>
       <IconButton > 
-        <MoreHorizIcon />
+        <MoreHorizIcon onClick={handlePopper}  />
       </IconButton>
       </div>
     </div>

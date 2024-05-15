@@ -118,14 +118,9 @@ const menuItems = [
                   Post
                 </Button >
                 <div style={{height: '80px'}}>
-
                 </div>
-          
                 <ButtonDrawer />   
-                
-
               </List>
-              
             </Box>
           </Box>
         </Container>

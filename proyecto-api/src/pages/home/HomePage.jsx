@@ -1,8 +1,9 @@
-// import * as React from 'react';
-// import { useState, useEffect } from 'react';
-// import { CssBaseline, Box, Grid, Container, TextField, InputAdornment } from '@mui/material';
-// import { collection, getDocs } from "firebase/firestore";
-// import { db } from '../../firebase/Conexion.js';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { CssBaseline, Box, Grid, Container, TextField, InputAdornment } from '@mui/material';
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from '../../firebase/Conexion.js';
+
 // import DrawerLeft from '../../components/drawer/Drawer';
 // import { Search as SearchIcon } from '@mui/icons-material';
 // import LogOut from '../login/LogOut';
@@ -89,17 +90,15 @@
 // }
 
 
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { CssBaseline, Box, Grid, Container, TextField, InputAdornment } from '@mui/material';
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from '../../firebase/Conexion.js';
+
+
 import DrawerLeft from '../../components/drawer/Drawer';
 import { Search as SearchIcon } from '@mui/icons-material';
-import LogOut from '../login/Logout.jsx';
 import MandarMensajes from '../../components/cards/CardMandarMensajes'; // Ajusta la ruta según sea necesario
 import GiphyViewer from '../../components/apis/giphy/Giphy'; // Importar GiphyViewer
 import TraerMensajes from '../../components/cards/CardTraerMensajes';
+import UnderlineTabs from '../../components/tabs/Tabs1.jsx';
+import { MdOutlineSettings } from 'react-icons/md';
 
 const margenSup = '80px';
 
@@ -143,8 +142,8 @@ export default function HomePage() {
               borderRadius="1px"
               padding="0.1rem"
             >
-              {/* <UnderlineTabs />
-              <MdOutlineSettings size={20} color="black" /> */}
+              <UnderlineTabs />
+              <MdOutlineSettings size={20} color="black" /> 
             </Box>
             <MandarMensajes onMessageSent={handleNuevoMensaje} />
             {/* Mostrar los mensajes (ahora ordenados) */}
@@ -153,7 +152,6 @@ export default function HomePage() {
             <GiphyViewer />
           </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
-            <LogOut />
             <TextField 
               fullWidth
               variant="outlined"
