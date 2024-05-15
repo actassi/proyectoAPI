@@ -20,6 +20,8 @@ export default function UserProfile() {
   const user = auth.currentUser;
   let avatar = '';
   let name = '';
+  const correo = user.email;
+  
 
   if (user) {
     avatar = user.photoURL || ''; // Si photoURL es null, asigna un valor vacío
@@ -90,8 +92,8 @@ export default function UserProfile() {
       </Popper>
       <Avatar alt={name} src={avatar} sx={{ width: 40, height: 40 }} />
       <div style={{ flex: 1 }}>
-        <p style={{ marginBottom: '0', fontWeight: 'bold', color: 'black' }}>Jorge Martinez</p>
-        <p style={{ marginBottom: '0', color: 'gray' }}>@JorgeMa12345</p>
+        <p style={{ marginBottom: '0', fontWeight: 'bold', color: 'black', textAlign: 'left' }}>{name}</p>
+        <p style={{ marginBottom: '0', color: 'gray', textAlign: 'left' }}>{correo}</p>
       </div>
       <div style={{ flex: 1 }}>
       <IconButton > 

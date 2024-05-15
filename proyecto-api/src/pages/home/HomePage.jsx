@@ -129,7 +129,7 @@ export default function HomePage() {
         <Grid container spacing={2}>
           {/* DrawerLeft */}
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup, position: 'sticky', top: '0', alignSelf: 'flex-start' }}>
-            <DrawerLeft selectedPath={'/home'} />
+            <DrawerLeft selectedPath={'/home'}  sx={{display: 'flex', height: '100%'}} />
           </Grid>
           {/* Contenido centrado */}
           <Grid item xs={12} md={6} sx={{ marginTop: margenSup }}>

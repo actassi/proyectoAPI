@@ -75,6 +75,7 @@ const menuItems = [
                 '& .MuiDrawer-paper': {
                   width: drawerWidth,
                   boxSizing: 'border-box',
+                  
                 },
               }}
               variant="permanent"
@@ -89,7 +90,7 @@ const menuItems = [
                   <ListItem
                     key={item.text}
                     disablePadding
-                    style={{ marginBottom: '16px', fontSize: '20px', marginLeft: '-66px' }}
+                    style={{ marginBottom: '14px', fontSize: '20px', marginLeft: '-66px' }}
                     sx={{ fontFamily: 'TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif', fontSize: '30px' }}
                     selected={selectedItem === item.path}
                     onClick={() => handleItemClick(item.path)}
@@ -117,9 +118,9 @@ const menuItems = [
                 >
                   Post
                 </Button >
-                <div style={{height: '80px'}}>
-                </div>
-                <ButtonDrawer />   
+                <Box sx={{marginTop: '2rem' }} >
+                   <ButtonDrawer />   
+                </Box>
               </List>
             </Box>
           </Box>
