@@ -2,7 +2,10 @@ import Avatar from "@mui/material/Avatar";
 import { Card, CardContent, Box } from "@mui/material";
 import * as React from "react";
 import Megusta from "../buttons/Megusta";
+
+
 const TraerMensajes = ({ mensajes }) => {
+  
   if (!mensajes) {
     return <div>No hay mensajes disponibles</div>;
   }
@@ -29,9 +32,10 @@ const TraerMensajes = ({ mensajes }) => {
               <Box                 sx={{ textAlign:"justify",marginTop:"7%"}}
 >
                 <p style={{ marginBottom: "6px", color: "gray" }}>
-                  {mensaje.correo}
+                  {mensaje.displayName}
                 </p>
                 <p>{mensaje.texto}</p>
+                <p></p>
               </Box>
             </Box>
             <Box
