@@ -20,7 +20,6 @@ import GiphyViewer from "../../components/apis/giphy/Giphy.jsx";
 import TraerMensajes from "../../components/cards/CardTraerMensajes.jsx";
 import UnderlineTabs from "../../components/tabs/Tabs1.jsx";
 import { MdOutlineSettings } from "react-icons/md";
-import LogOut from "../login/LogOut.jsx";
 
 const margenSup = "80px";
 
