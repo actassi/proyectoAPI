@@ -49,7 +49,7 @@ export default function HomePage() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg" sx={{ marginLeft: "-10px", marginTop: "-80px" }}>
+      <Container maxWidth="lg" sx={{ marginLeft: "-10px", marginTop: "-80px"}}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
           <Grid
@@ -69,8 +69,7 @@ export default function HomePage() {
             />
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: margenSup }}>
-            <Box
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup, height: "100vh" }}>            <Box
               display="flex"
               alignItems="center"
               justifyContent="space-between"
