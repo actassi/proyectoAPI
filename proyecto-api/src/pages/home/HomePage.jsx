@@ -65,11 +65,11 @@ export default function HomePage() {
           >
             <DrawerLeft
               selectedPath={"/home"}
-              sx={{ display: "flex", height: "100%" }}
             />
           </Grid>
           {/* Contenido centrado */}
-          <Grid item xs={12} md={6} sx={{ marginTop: margenSup, height: "100vh" }}>            <Box
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup}}>
+            <Box
               display="flex"
               alignItems="center"
               justifyContent="space-between"

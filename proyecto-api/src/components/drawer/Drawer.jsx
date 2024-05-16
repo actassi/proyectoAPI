@@ -68,8 +68,8 @@ const menuItems = [
     return (
       <React.Fragment>
         <CssBaseline />
-        <Container maxWidth="xl">
-          <Box sx={{ display: 'flex', gap: '10' }}>
+        <Container maxWidth="xl" >
+          <Box sx={{ display: 'flex', gap: '1' }}>
             <Box
               sx={{
                 width: drawerWidth,
@@ -77,13 +77,13 @@ const menuItems = [
                 '& .MuiDrawer-paper': {
                   width: drawerWidth,
                   boxSizing: 'border-box',
-                  
                 },
               }}
               variant="permanent"
               anchor="left"
-
-              display="table-column-group"            >
+              display="flex"
+            >
+            
               <Toolbar />
               <List style={{ display: 'flex', flexDirection: 'column' }}>
                 <X  width="30px" style={{ marginBottom: '16px', marginLeft: '-50px' }} />

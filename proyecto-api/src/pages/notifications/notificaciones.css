@@ -14,7 +14,7 @@
 .notificacion{
  
         padding: 2% 1%;
-       width: 50%;
+       width: 100%;
         display: flex;
             flex-direction: column;
         gap: 1%;

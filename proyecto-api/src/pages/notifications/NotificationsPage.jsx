@@ -1,29 +1,43 @@
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import {
+  CssBaseline,
+  Box,
+  Grid,
+  Container,
+  TextField,
+  InputAdornment,
+} from "@mui/material";
 import DrawerLeft from "../../components/drawer/Drawer";
-import CardPersonal from "../../components/cards/CardPersonal";
-import { InputAdornment, TextField } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
 import "./notificaciones.css";
 import Megusta from "../../components/buttons/Megusta";
 import AvatarComponent from "../../components/apis/Avatar"
-const margenSup = "10px";
+
+const margenSup = "15px";
 
 export default function ProfilePage() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="xl" sx={{ marginLeft: "-10px", marginTo: "-80px" }}>
+      <Container maxWidth="lg" sx={{ marginLeft: "-10px", marginTo: "-80px" }}>
         <Grid container spacing={2}>
           {/* DrawerLeft */}
-          <Grid item xs={12} md={3}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{
+              marginTop: margenSup,
+              position: "sticky",
+              top: "0",
+              alignSelf: "flex-start",
+            }}
+          >
             <DrawerLeft selectedPath={"/notifications"} />
 
           </Grid>
           {/* Contenido centrado */}
+          <Grid item xs={12} md={6} sx={{ marginTop: margenSup}}>  
           <div
             className="notificacion"
            
@@ -68,6 +82,7 @@ export default function ProfilePage() {
               </div>
             </div>
           </div>
+          </Grid>
           <Grid item xs={12} md={3} sx={{ marginTop: margenSup }}>
             {/* Contenido aquí */}
             <TextField
